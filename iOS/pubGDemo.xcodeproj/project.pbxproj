@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FA576F324D8433200AFA66A /* libagora_rtm_sdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA576F224D8433200AFA66A /* libagora_rtm_sdk.dylib */; };
+		8FA576F424D8433200AFA66A /* libagora_rtm_sdk.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 8FA576F224D8433200AFA66A /* libagora_rtm_sdk.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8FA576F724D84A2600AFA66A /* AgoraRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA576F024D842E900AFA66A /* AgoraRtcKit.framework */; };
+		8FA576F824D84A2600AFA66A /* AgoraRtcKit.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 8FA576F024D842E900AFA66A /* AgoraRtcKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E51C93E724BBEF8300A9777F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51C93E624BBEF8300A9777F /* AppDelegate.swift */; };
 		E51C93EB24BBEF8300A9777F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51C93EA24BBEF8300A9777F /* ViewController.swift */; };
 		E51C93EE24BBEF8300A9777F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51C93EC24BBEF8300A9777F /* Main.storyboard */; };
 		E51C93F024BBEF8600A9777F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51C93EF24BBEF8600A9777F /* Assets.xcassets */; };
 		E51C93F324BBEF8600A9777F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51C93F124BBEF8600A9777F /* LaunchScreen.storyboard */; };
-		E51C945024BC01D700A9777F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E51C944F24BC01D700A9777F /* libcrypto.a */; };
-		E59EE4C724BEEB3B0065ABE2 /* libAgoraRtcCryptoLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E59EE4AF24BEEAFE0065ABE2 /* libAgoraRtcCryptoLoader.a */; };
-		E59EE4CB24BEEB670065ABE2 /* libagora_rtm_sdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E59EE4CA24BEEB670065ABE2 /* libagora_rtm_sdk.dylib */; };
-		E59EE4CC24BEEB6F0065ABE2 /* libagora_rtm_sdk.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E59EE4CA24BEEB670065ABE2 /* libagora_rtm_sdk.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		E5CA992424D008B7001720F9 /* AgoraRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CA991B24D0089A001720F9 /* AgoraRtcKit.framework */; };
-		E5CA992524D008B7001720F9 /* AgoraRtcKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5CA991B24D0089A001720F9 /* AgoraRtcKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E5E5AACA24BC54C8005BCC9D /* YGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E5AAC124BC54C8005BCC9D /* YGLayout.m */; };
 		E5E5AACB24BC54C8005BCC9D /* YGLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5AAC224BC54C8005BCC9D /* YGLayoutExtensions.swift */; };
 		E5E5AACC24BC54C8005BCC9D /* YGNodeList.c in Sources */ = {isa = PBXBuildFile; fileRef = E5E5AAC324BC54C8005BCC9D /* YGNodeList.c */; };
@@ -27,46 +25,24 @@
 		E5E5AAE524BC6018005BCC9D /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5AAE424BC6018005BCC9D /* ConfigModel.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E59EE4AE24BEEAFE0065ABE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E59EE4AA24BEEAFE0065ABE2 /* AgoraRtcCryptoLoader.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 20369E3F1E1E3AB200AE1906;
-			remoteInfo = AgoraRtcCryptoLoader;
-		};
-		E5CA991A24D0089A001720F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E5CA990424D0089A001720F9 /* AgoraRtcKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E5CA990B24D0089A001720F9;
-			remoteInfo = "build-AgoraRtcKit";
-		};
-		E5CA992124D008A4001720F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E5CA990424D0089A001720F9 /* AgoraRtcKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = "native-tg";
-			remoteInfo = "build-AgoraRtcKit";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		E51C945324BC01E100A9777F /* Embed Frameworks */ = {
+		8FA576F524D8433200AFA66A /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E5CA992524D008B7001720F9 /* AgoraRtcKit.framework in Embed Frameworks */,
-				E59EE4CC24BEEB6F0065ABE2 /* libagora_rtm_sdk.dylib in Embed Frameworks */,
+				8FA576F824D84A2600AFA66A /* AgoraRtcKit.framework in Embed Libraries */,
+				8FA576F424D8433200AFA66A /* libagora_rtm_sdk.dylib in Embed Libraries */,
 			);
-			name = "Embed Frameworks";
+			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8FA576F024D842E900AFA66A /* AgoraRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcKit.framework; path = ../../../../../Downloads/gme_sdk_ios/libs/AgoraRtcKit.framework; sourceTree = "<group>"; };
+		8FA576F224D8433200AFA66A /* libagora_rtm_sdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libagora_rtm_sdk.dylib; path = ../../../../../Downloads/gme_sdk_ios/libs/libagora_rtm_sdk.dylib; sourceTree = "<group>"; };
 		E51C93E324BBEF8300A9777F /* pubGDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pubGDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51C93E624BBEF8300A9777F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E51C93EA24BBEF8300A9777F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,11 +50,7 @@
 		E51C93EF24BBEF8600A9777F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E51C93F224BBEF8600A9777F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E51C93F424BBEF8600A9777F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E51C944F24BC01D700A9777F /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../media_sdk3/lib/ios/libcrypto.a; sourceTree = "<group>"; };
 		E51C947624BC07A900A9777F /* pubGDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pubGDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		E59EE4AA24BEEAFE0065ABE2 /* AgoraRtcCryptoLoader.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AgoraRtcCryptoLoader.xcodeproj; path = ../media_sdk3/proj.ios/AgoraRtcCryptoLoaderStatic/AgoraRtcCryptoLoader.xcodeproj; sourceTree = "<group>"; };
-		E59EE4CA24BEEB670065ABE2 /* libagora_rtm_sdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libagora_rtm_sdk.dylib; path = ../media_sdk3/lib/ios/libagora_rtm_sdk.dylib; sourceTree = "<group>"; };
-		E5CA990424D0089A001720F9 /* AgoraRtcKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AgoraRtcKit.xcodeproj; path = ../media_sdk3/out/gme_sdk/iOS/debug/arm64/Users/fh/Desktop/workspaces/media_sdk3/AgoraRtcKit.xcodeproj; sourceTree = "<group>"; };
 		E5E5AABE24BC54C8005BCC9D /* Yoga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Yoga.h; path = pubGDemo/YC_YogaKit/Classes/Yoga.h; sourceTree = SOURCE_ROOT; };
 		E5E5AABF24BC54C8005BCC9D /* YGLayout+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YGLayout+Private.h"; path = "pubGDemo/YC_YogaKit/Classes/YGLayout+Private.h"; sourceTree = SOURCE_ROOT; };
 		E5E5AAC024BC54C8005BCC9D /* YGEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGEnums.h; path = pubGDemo/YC_YogaKit/Classes/YGEnums.h; sourceTree = SOURCE_ROOT; };
@@ -100,10 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5CA992424D008B7001720F9 /* AgoraRtcKit.framework in Frameworks */,
-				E59EE4C724BEEB3B0065ABE2 /* libAgoraRtcCryptoLoader.a in Frameworks */,
-				E59EE4CB24BEEB670065ABE2 /* libagora_rtm_sdk.dylib in Frameworks */,
-				E51C945024BC01D700A9777F /* libcrypto.a in Frameworks */,
+				8FA576F724D84A2600AFA66A /* AgoraRtcKit.framework in Frameworks */,
+				8FA576F324D8433200AFA66A /* libagora_rtm_sdk.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +83,7 @@
 		E51C93DA24BBEF8300A9777F = {
 			isa = PBXGroup;
 			children = (
-				E5CA990424D0089A001720F9 /* AgoraRtcKit.xcodeproj */,
-				E59EE4AA24BEEAFE0065ABE2 /* AgoraRtcCryptoLoader.xcodeproj */,
+				8FA576F024D842E900AFA66A /* AgoraRtcKit.framework */,
 				E51C93E524BBEF8300A9777F /* pubGDemo */,
 				E5E5AABD24BC54A9005BCC9D /* YogaKit */,
 				E51C93E424BBEF8300A9777F /* Products */,
@@ -149,26 +118,9 @@
 		E51C944C24BC01BE00A9777F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E59EE4CA24BEEB670065ABE2 /* libagora_rtm_sdk.dylib */,
-				E51C944F24BC01D700A9777F /* libcrypto.a */,
+				8FA576F224D8433200AFA66A /* libagora_rtm_sdk.dylib */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E59EE4AB24BEEAFE0065ABE2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E59EE4AF24BEEAFE0065ABE2 /* libAgoraRtcCryptoLoader.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E5CA990524D0089A001720F9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E5CA991B24D0089A001720F9 /* AgoraRtcKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		E5E5AABD24BC54A9005BCC9D /* YogaKit */ = {
@@ -200,12 +152,11 @@
 				E51C93DF24BBEF8300A9777F /* Sources */,
 				E51C93E024BBEF8300A9777F /* Frameworks */,
 				E51C93E124BBEF8300A9777F /* Resources */,
-				E51C945324BC01E100A9777F /* Embed Frameworks */,
+				8FA576F524D8433200AFA66A /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E5CA992224D008A4001720F9 /* PBXTargetDependency */,
 			);
 			name = pubGDemo;
 			productName = pubGDemo;
@@ -238,39 +189,12 @@
 			mainGroup = E51C93DA24BBEF8300A9777F;
 			productRefGroup = E51C93E424BBEF8300A9777F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = E59EE4AB24BEEAFE0065ABE2 /* Products */;
-					ProjectRef = E59EE4AA24BEEAFE0065ABE2 /* AgoraRtcCryptoLoader.xcodeproj */;
-				},
-				{
-					ProductGroup = E5CA990524D0089A001720F9 /* Products */;
-					ProjectRef = E5CA990424D0089A001720F9 /* AgoraRtcKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				E51C93E224BBEF8300A9777F /* pubGDemo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		E59EE4AF24BEEAFE0065ABE2 /* libAgoraRtcCryptoLoader.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libAgoraRtcCryptoLoader.a;
-			remoteRef = E59EE4AE24BEEAFE0065ABE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E5CA991B24D0089A001720F9 /* AgoraRtcKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AgoraRtcKit.framework;
-			remoteRef = E5CA991A24D0089A001720F9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E51C93E124BBEF8300A9777F /* Resources */ = {
@@ -303,14 +227,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E5CA992224D008A4001720F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "build-AgoraRtcKit";
-			targetProxy = E5CA992124D008A4001720F9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E51C93EC24BBEF8300A9777F /* Main.storyboard */ = {
@@ -450,19 +366,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = JDPG69R49Z;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWZTSQ45V9;
+				FRAMEWORK_SEARCH_PATHS = deps;
 				INFOPLIST_FILE = pubGDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = ../media_sdk3/lib/ios;
-				PRODUCT_BUNDLE_IDENTIFIER = io.agora.pubGAudioDemo;
+				LIBRARY_SEARCH_PATHS = deps;
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.pubg.lihuize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = AgoraLab2020;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./pubGDemo/pubGDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -473,19 +390,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = JDPG69R49Z;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWZTSQ45V9;
+				FRAMEWORK_SEARCH_PATHS = deps;
 				INFOPLIST_FILE = pubGDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = ../media_sdk3/lib/ios;
-				PRODUCT_BUNDLE_IDENTIFIER = io.agora.pubGAudioDemo;
+				LIBRARY_SEARCH_PATHS = deps;
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.pubg.lihuize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = AgoraLab2020;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./pubGDemo/pubGDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

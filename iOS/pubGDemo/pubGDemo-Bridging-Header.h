@@ -9,9 +9,8 @@
 #ifndef pubGDemo_Bridging_Header_h
 #define pubGDemo_Bridging_Header_h
 
-#import "../../media_sdk3/include/api/exported/objc/AgoraRtcEngineKit.h"
-#import "../../media_sdk3/include/api/exported/objc/AgoraRtcCryptoLoader.h"
-#import "../../media_sdk3/include/api/exported/objc/AgoraGmeKit.h"
+#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+#import <AgoraRtcKit/AgoraGmeKit.h>
 #import "UIView+Yoga.h"
 
 #endif /* pubGDemo_Bridging_Header_h */

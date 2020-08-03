@@ -107,7 +107,7 @@ public class ConfigModel : NSObject, Codable {
     var audioModel: AgoraGMEAudioMode = .world
     @PropInfo
     var soundEffect: SoundEffect = .enable
-    var appId: String = "aab8b8f5a8cd4469a63042fcfafe7063" //  "4a72f2295a6149db82bab1fe56758aca"
+    var appId: String = "01234567890123456789012345678901"
     var channelId: String = "pubG"
     var teamId: Int = 123
     var rtcToken: String?
