@@ -63,20 +63,13 @@ spatial_audio.exe YOUR_TEST_TOKEN TEST_ROOM_NAME TEST_USER_ID
 ```
 
 #### iOS
-1. 将有效的 AppID 填写进 KeyCenter.swift
-
-	```
-	static func appId() -> String {
-	    return <#YOUR APPID#>
-	}
-	```
-
-2. 解压下载的语音通话 SDK 压缩包，将其中的 libs/**AgoraAudioKit.framework** 复制到本项目的 iOS/ARD-Agora-Murder-Mystery-Game 文件夹下。
-3. 使用 XCode 打开 iOS/ARD-Agora-Murder-Mystery-Game.xcodeproj，连接 iOS 测试设备，设置有效的开发者签名后即可运行。
+1. 编辑 iOS/pubGDemo/ConfigModel.swift 文件，搜索 "class ConfigModel" ，把 ConfigModel 类的 appId 成员变量改为你的 App ID，rtcToken 改为你的 token。
+2. 解压iOS SDK 压缩包，将其中的 libs 文件夹下的所有文件，复制到本项目的 iOS/deps/ 文件夹下。
+3. 使用 XCode 打开 iOS/pubGDemo.xcodeproj，连接 iOS 测试设备，设置有效的开发者签名后即可运行。
 
 		运行环境:
-		* XCode 9.0 +
-		* iOS 8.0 +
+		* XCode 11.6 +
+		* iOS 11.4 +
 
 #### Android
 1. 将有效的 AppID 填写进 "app/src/main/res/values/strings_config.xml"

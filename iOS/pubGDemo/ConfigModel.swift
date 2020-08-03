@@ -205,7 +205,7 @@ public class ConfigModel : NSObject, Codable {
             (channel, uId, elapsed) in
             self.userId = uId
             info("join rtc \(channel) succ, and userId: \(uId)、elapsed: \(elapsed)")
-            let result = self.agoraGmeKit.enterRoom(byToken: self.rtmToken,
+            let result = self.agoraGmeKit.enterRoom(byToken: self.rtcToken,
                                                     roomName: channel,
                                                     userId: uId)
             if (result != 0) {
