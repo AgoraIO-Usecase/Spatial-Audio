@@ -33,15 +33,15 @@ git clone https://github.com/AgoraIO/Tools.git
 ```
 3. 以 python token生成器的使用为例
 	* 编辑 Tools/DynamicKey/AgoraDynamicKey/python/src/RtcTokenBuilder.py 文件，在48行下面加如下代码，使生成的token支持RTM登录
-	```
-	token.addPrivilege(kRtmLogin, privilegeExpiredTs)
-	```
+		```
+		token.addPrivilege(kRtmLogin, privilegeExpiredTs)
+		```
 	* 编辑 Tools/DynamicKey/AgoraDynamicKey/python/sample/RtcTokenBuilderSample.py 文件，修改 appID, appCertificate, channelName, uid 为自己使用的 App ID, App 证书, 房间名称, 整型 user ID
 	* 运行 python 脚本，生成token
-	```
-	cd Tools/DynamicKey/AgoraDynamicKey/python/sample/
-	python RtcTokenBuilderSample.py
-	```
+		```
+		cd Tools/DynamicKey/AgoraDynamicKey/python/sample/
+		python RtcTokenBuilderSample.py
+		```
 
 ### 注意事项
 在使用空间语音前，请联系我们市场销售人员，告诉我们你将要使用的App ID，以便我们为你开启该功能
@@ -51,16 +51,16 @@ git clone https://github.com/AgoraIO/Tools.git
 ### Windows
 1. 用 Visual Studio 2017 或更新版本，打开Windows/spatial_audio.sln文件。
 2. 将有效的 AppID 定义为 TEST_APP_ID 宏。
-```
-#define TEST_APP_ID "YOUR_TEST_APP_ID"
-```
+	```
+	#define TEST_APP_ID "YOUR_TEST_APP_ID"
+	```
 3. 解压 Windows SDK 压缩包，将其中的 **libs** 文件夹下的所有文件，复制到 **Windows/deps** 文件夹下。
 4. 用 Visual Studio 编译项目。
 5. 按照下面的命令格式，运行示例程序
-```
-#如果没有启用App证书，则YOUR_TEST_TOKEN为""
-spatial_audio.exe YOUR_TEST_TOKEN TEST_ROOM_NAME TEST_USER_ID
-```
+	```
+	#如果没有启用App证书，则YOUR_TEST_TOKEN为""
+	spatial_audio.exe YOUR_TEST_TOKEN TEST_ROOM_NAME TEST_USER_ID
+	```
 
 #### iOS
 1. 编辑 iOS/pubGDemo/ConfigModel.swift 文件，搜索 "class ConfigModel" ，把 ConfigModel 类的 appId 成员变量改为你的 App ID，rtcToken 改为你的 token。
@@ -72,17 +72,12 @@ spatial_audio.exe YOUR_TEST_TOKEN TEST_ROOM_NAME TEST_USER_ID
 		* iOS 11.4 +
 
 #### Android
-1. 将有效的 AppID 填写进 "app/src/main/res/values/strings_config.xml"
-
-	```
-	<string name="private_app_id"><#YOUR APP ID#></string>
-	```
-
-2. 解压下载的语音通话 SDK 压缩包，将其中的 **libs** 文件夹下的 ***.jar** 复制到本项目的 **app/libs** 下，其中的 **libs** 文件夹下的 **arm64-v8a**/**x86**/**armeabi-v7a** 复制到本项目的 **app/src/main/jniLibs** 下。
+1. 修改 Android/app/src/main/java/com/example/spatialaudio/MainActivity.java 文件，把 MainActivity 的mAppId，mToken，mChannel，mUid，mTeamID，mHearRange设置为测试的参数。
+2. 解压下载的 Android SDK 压缩包，将其中的 **libs** 文件夹下的 ***.jar** 复制到本项目的 **libagorartc/libs** 下，其中的 **libs** 文件夹下的 **arm64-v8a**/**armeabi-v7a**/**x86**/**x86_64** 复制到本项目的 **libagorartc/native-libs** 下。
 3. 使用 Android Studio 打开该项目，连接 Android 测试设备，编译并运行。也可以使用 `Gradle` 直接编译运行。
 
 		运行环境:
-		* Android Studio 2.0 +
+		* Android Studio 4.0 +
 		* minSdkVersion 16
 		* 部分模拟器会存在功能缺失或者性能问题，所以推荐使用真机 Android 设备
 
