@@ -6,7 +6,7 @@
 
 using namespace agora::rtc;
 
-#define TEST_STATIC_ID "12345678901234567890123456789012"
+#define TEST_APP_ID "01234567890123456789012345678901"
 
 bool bStop = false;
 
@@ -83,7 +83,7 @@ public:
 int main(int argc, const char **argv)
 {
     if (argc < 4) {
-        std::cout << "usage: test_gme token room uid" << std::endl;
+        std::cout << "usage: spatial_audio.exe token room uid" << std::endl;
         return 0;
     }
     signal(SIGINT, &SigInt_Handler);
@@ -95,7 +95,7 @@ int main(int argc, const char **argv)
     agora::rtc::RtcEngineContext rtcCtx;
     rtcCtx.eventHandler = &rtcEH;
     // this APP ID is the one in your agora service control pannel
-    rtcCtx.appId = TEST_STATIC_ID;
+    rtcCtx.appId = TEST_APP_ID;
     rtcCtx.context = NULL;
 
     // create and inilialize the RTC engine
@@ -116,7 +116,7 @@ int main(int argc, const char **argv)
     // define initializing parameters for the GME
     agora::rtc::GMEngineContext ctx;
     // the APP ID should be the same with the RTC engine
-    ctx.appId = TEST_STATIC_ID;
+    ctx.appId = TEST_APP_ID;
     ctx.eventHandler = &hdl;
     // do initializing with the RTC engine and parameters above
     gme->initialize(rtcEngine, ctx);
