@@ -1,94 +1,99 @@
-# Agora游戏引擎
+# Agora Game Engine
 
-Agora游戏引擎是 Agora 针对电子竞技类游戏提供的实时音视频解决方案，主要用于实现范围语音和 3D 音效等功能，为玩家提供互动沉浸式的游戏体验。
+Agora Game Engine is a real-time communication solution for esports games. It implements audio range and 3D sound effects in your games, providing a more interactive and immersive gaming experience for players.
 
-## 范围语音
+## Audio range
 
-范围语音功能可以灵活设置同一个房间内玩家之间的声音可达性，从而增加游戏的趣味性和互动性。
+The audio range feature enables you to set the sound reach among players in a game room, determining how and when players can hear each other. This enhances the players’ interactive experience within the game.
 
-通过设置小队、语音模式和语音接收范围，决定同一个房间内的玩家之间能否相互听见对方的声音，规则如下：
+Whether players in a game room can hear each other is determined by the team ID, audio mode, and audio reception range settings. The rules are as follows:
 
-- 当玩家属于同一小队时，无论距离多远、采用何种语音模式，都可以听见彼此的声音。
-- 当玩家属于不同小队时，只有在语音模式都设为“所有人”，且在彼此的语音接收范围内时，才能相互听见。
+- When the players are on the same team, they can hear each other, regardless of the settings of the audio mode and audio reception range.
+- When the players are on different teams, they can hear each other only when they use the MODE_WORLD audio mode and are within each other's audio reception range.
 
-## 3D 音效
+## 3D sound effects
 
-3D 音效能塑造声音的空间感，并随着声源位置的移动改变声音的大小，使玩家获得身临其境之感。
+The 3D sound effects feature shapes the spatial sense of the sound and changes the sound volume as the sound source moves, providing players with enhanced audio immersion and location accuracy.
 
-## 前置步骤
+## Prerequisites
 
-### 获取声网 App ID
-通过以下步骤获取声网 App ID：
+### Get App ID for Agora service
 
-- 在声网控制台创建一个账号。
-- 登录声网控制台，创建一个项目，鉴权方式选择 “App ID + App 证书 + Token”。注意，请确保该项目启用了 App 证书。
-- 前往项目管理页面，获取该项目的 App ID。
+You can get App ID as follows:
 
-### 生成 token
+- Create an account in [Agora Console](https://sso.agora.io/v2/signup).
+- Log in to Agora Console and create a project. Select "App ID + App Certificate + Token" as your authentication mechanism when creating the project. Make sure that you enable the [App Certificate](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#appcertificate) of this project.
+- Get the App ID and App Certificate of this project in **Project Management** page.
 
-1. 如果没有启用 App 证书，则不需要生成token。在调用相关接口的时候，传入空字符串。
-2. 下载token生成器的代码
-```
-git clone https://github.com/AgoraIO/Tools.git
-```
-3. 以 python token生成器的使用为例
-	* 编辑 Tools/DynamicKey/AgoraDynamicKey/python/src/RtcTokenBuilder.py 文件，在48行下面加如下代码，使生成的token支持RTM登录
+### Generate the token
+
+1. If you did not enable the App Certificate, then this step is not needed, and you should then pass an empty string like "" as the token argument when you call the joinChannel or enterRoom interface.
+2. If you enabled the App Certificate, then the following steps is necessary. Firstly you should clone the repository of generating token.
+	```
+	git clone https://github.com/AgoraIO/Tools.git
+	```
+3. For the usage of python token generater as an example.
+	* Edit file "Tools/DynamicKey/AgoraDynamicKey/python/src/RtcTokenBuilder.py", add one statement at line 48, for the support of login RTM service as follows.
 		```
 		token.addPrivilege(kRtmLogin, privilegeExpiredTs)
 		```
-	* 编辑 Tools/DynamicKey/AgoraDynamicKey/python/sample/RtcTokenBuilderSample.py 文件，修改 appID, appCertificate, channelName, uid 为自己使用的 App ID, App 证书, 房间名称, 整型 user ID
-	* 运行 python 脚本，生成token
+	* Edit file "Tools/DynamicKey/AgoraDynamicKey/python/sample/RtcTokenBuilderSample.py", assign variables appID、 appCertificate、 channelName、 uid with your App ID、 App certificate、 room name、 integer user ID.
+	* Run python script to generate token:
 		```
 		cd Tools/DynamicKey/AgoraDynamicKey/python/sample/
 		python RtcTokenBuilderSample.py
 		```
 
-### 注意事项
-在使用空间语音前，请联系我们市场销售人员，告诉我们你将要使用的App ID，以便我们为你开启该功能
+### NOTICES
 
-## 运行示例程序
+Before using spacial audio feature, you should contact our marketing manager, and tell us your App ID. Then we will setup this feature for you.
+
+## Run the demo
 
 ### Windows
-1. 用 Visual Studio 2017 或更新版本，打开Windows/spatial_audio.sln文件。
-2. 将有效的 AppID 定义为 TEST_APP_ID 宏。
+
+1. Open file "Windows/spatial_audio.sln" with Visual Studio 2017 or newer version.
+2. Define TEST_APP_ID macro with your effective App ID in "main.cpp".
 	```
 	#define TEST_APP_ID "YOUR_TEST_APP_ID"
 	```
-3. 解压 Windows SDK 压缩包，将其中的 **libs** 文件夹下的所有文件，复制到 **Windows/deps** 文件夹下。
-4. 用 Visual Studio 编译项目。
-5. 按照下面的命令格式，运行示例程序
+3. Unzip the Windows SDK zip file, copy all files in **libs** directory to **Windows/deps** directory.
+4. Compile the project in Visual Studio.
+5. Run the demo in the following format:
 	```
-	#如果没有启用App证书，则YOUR_TEST_TOKEN为""
+	#If you did not enable the app certificate, then the YOUR_TEST_TOKEN should be ""
 	spatial_audio.exe YOUR_TEST_TOKEN TEST_ROOM_NAME TEST_USER_ID
 	```
 
 #### iOS
-1. 编辑 iOS/pubGDemo/ConfigModel.swift 文件，搜索 "class ConfigModel" ，把 ConfigModel 类的 appId 成员变量改为你的 App ID，rtcToken 改为你的 token。
-2. 解压iOS SDK 压缩包，将其中的 libs 文件夹下的所有文件，复制到本项目的 iOS/deps/ 文件夹下。
-3. 使用 XCode 打开 iOS/pubGDemo.xcodeproj，连接 iOS 测试设备，设置有效的开发者签名后即可运行。
 
-		运行环境:
+1. Edit file "iOS/pubGDemo/ConfigModel.swift", and search "class ConfigModel" in the file, assign the member variable **appId** and **rtcToken** of ConfigModule class with your effective App ID and token.
+2. Unzip the iOS SDK zip file, and copy all files in **libs** directory of SDK to the **iOS/deps** directory of this project.
+3. Open file "iOS/pubGDemo.xcodeproj" with XCode, and connect your iOS device, then compile and run it.
+
+		Running environment:
 		* XCode 11.6 +
 		* iOS 11.4 +
 
 #### Android
-1. 修改 Android/app/src/main/java/com/example/spatialaudio/MainActivity.java 文件，把 MainActivity 的mAppId，mToken，mChannel，mUid，mTeamID，mHearRange设置为测试的参数。
-2. 解压下载的 Android SDK 压缩包，将其中的 **libs** 文件夹下的 ***.jar** 复制到本项目的 **libagorartc/libs** 下，其中的 **libs** 文件夹下的 **arm64-v8a**/**armeabi-v7a**/**x86**/**x86_64** 复制到本项目的 **libagorartc/native-libs** 下。
-3. 使用 Android Studio 打开该项目，连接 Android 测试设备，编译并运行。也可以使用 `Gradle` 直接编译运行。
 
-		运行环境:
+1. Edit file "Android/app/src/main/java/com/example/spatialaudio/MainActivity.java", assign the member variables mAppId, mToken, mChannel, mUid, mTeamID and mHearRange of MainActivity class with your effective test parameters.
+2. Unzip the Android SDK zip file, then copy the ***.jar** files in **libs** directory of SDK to the **libagorartc/libs** directory of this project, and copy **arm64-v8a**/**armeabi-v7a**/**x86**/**x86_64** directories in **libs** directory to **libagorartc/native-libs** directory of this project.
+3. Open the project with Android Studio, connect your Android device, compile and run it.
+
+		Running environment:
 		* Android Studio 4.0 +
 		* minSdkVersion 16
-		* 部分模拟器会存在功能缺失或者性能问题，所以推荐使用真机 Android 设备
+		* Some feature may be missing on the simulater, so testing demo with your real device is recommended.
 
 
-## 联系我们
+## Contact us
 
-- 如果发现了示例程序的 bug，欢迎提交 [issue](https://github.com/AgoraIO-Usecase/Spatial-Audio/issues)
-- 声网 SDK 完整 API 文档见 [文档中心](https://docs.agora.io/cn/)
-- 如果有售前咨询问题，可以拨打 400 632 6626，或加入官方Q群 12742516 提问
-- 如果需要售后技术支持，你可以在 [Agora Dashboard](https://dashboard.agora.io) 提交工单
+- If you found any bug of demo, submiting [issues](https://github.com/AgoraIO-Usecase/Spatial-Audio/issues) is welcomed.
+- The full API document of Agora SDK is [here](https://docs.agora.io/cn/)
+- You can call 400-632-6626 or join QQ group 12742516 for pre-sales support.
+- You can ask for technical support by submitting tickets in [Agora Console](https://console.agora.io/)
 
-## 代码许可
+## License
 
 The MIT License (MIT).
